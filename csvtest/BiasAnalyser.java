@@ -25,6 +25,7 @@ public class BiasAnalyser implements Serializable{
 		this.clickedEntries = csvInterface.clickedEntries();
 		this.totalEntries = csvInterface.totalEntriesByRank();
 
+		// Create Maps of <each rank, <List of Entries>> and <each Set ID, <List of Entries>>
 		this.rankToEntries = clickedEntries.stream().collect(Collectors.groupingBy(x -> x.getRank()));
 		this.setIDToEntries = clickedEntries.stream().collect(Collectors.groupingBy(x -> x.getSet()));
 	}
@@ -53,9 +54,13 @@ public class BiasAnalyser implements Serializable{
 	}
 
 	public void calcTimeStatsbyRank(int maxHoursIncluded){
+		if(maxHoursIncluded < 1){
+			System.out.println("\n\nTest failed - increase time examined\n");
+			return;
+		}
 		System.out.println("\n\nCalculating Time Stats for Clicks by Rank\n");
+		
 		DescriptiveStatistics[] stats = new DescriptiveStatistics[MAXRANK];
-
 		for(int x=0; x<MAXRANK; x+=1){
 			stats[x] = new DescriptiveStatistics();
 		}
@@ -100,6 +105,7 @@ public class BiasAnalyser implements Serializable{
 			}	
 		}
 
+		//Gather and write data
 		ArrayList<String[]> data = new ArrayList<String[]>();
 		String s = "\t";
 		for(int x=0; x<MAXRANK; x+=1){
@@ -146,6 +152,7 @@ public class BiasAnalyser implements Serializable{
 			firstRankClicked[firstClicked.getRank()-1] += 1;
 		}
 
+		//Gather and write data
 		ArrayList<String[]> data = new ArrayList<String[]>();
 		data.add("Rank\tTimes Clicked First\n".split("\t"));
 		for(int i=0; i < firstRankClicked.length; i+=1){
@@ -180,8 +187,8 @@ public class BiasAnalyser implements Serializable{
 			}
 			firstClickBySetAndRank[ clicksPerSetID-1 ][ firstClicked.getRank()-1 ] += 1;
 		}
-		
-		
+
+		//Gather and write data
 		ArrayList<String[]> data = new ArrayList<String[]>();
 		String s = "\t";
 		for(int x=0; x<MAXRANK; x+=1){
