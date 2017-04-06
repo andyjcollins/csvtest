@@ -20,17 +20,10 @@ public class Main {
 		}
 		else{
 			System.out.printf("Problem with program paramters\n"
-					+ "Usage:\n\tjava -jar %s.jar {obligatory CSV input:path\\filename} {optional output path [this directory used by default]}\n\n", "csvtest");
+					+ "Usage:\n\tjava -jar %s.jar {obligatory CSV input:path\\filename} {optional output path [this directory used by default]}\n\n", "[progname]");
 			System.exit(0);
 		}
-		//System.out.printf("File path: %s\n", path);
 		
-		//test path
-		//test file character type
-		//test that file has correct extension
-		//test file exists
-		
-		//CSVLoader csvInterface = new CSVLoader("C:\\Users\\Andrew\\Documents\\mdl_recysys_dataset\\rec.csv","c:\\Users\\andrew");
 		BiasAnalyser analyser = new BiasAnalyser(csvInterface);
 		analyser.runAllTests();
 		

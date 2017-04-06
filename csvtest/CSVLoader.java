@@ -37,15 +37,8 @@ public class CSVLoader {
 		}
 		catch(FileNotFoundException e){
 			System.out.printf("\n%s can not be read.\nPlease check that the path and filename are correct.\n"
-					+ "Usage:\n\tjava -jar %s.jar {obligatory CSV input:path\\filename} {optional output path [this directory used by default]}\n\n", filename, "csvtest");
+					+ "Usage:\n\tjava -jar %s.jar {obligatory CSV input:path\\filename} {optional output path [this directory used by default]}\n\n", filename, "[progname]");
 					
-					
-					
-					/*, new java.io.File(Main.class.getProtectionDomain()
-							  .getCodeSource()
-							  .getLocation()
-							  .getPath())
-							  .getName());*/
 			System.exit(0);
 		}
 		return file;

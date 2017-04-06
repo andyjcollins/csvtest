@@ -29,7 +29,6 @@ public class BiasAnalyser implements Serializable{
 		this.setIDToEntries = clickedEntries.stream().collect(Collectors.groupingBy(x -> x.getSet()));
 	}
 
-	//add output filename parameter
 	public void runAllTests(){
 		this.calcCTRbyRank();
 		this.calcClicksBySetandRank();		
