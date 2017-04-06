@@ -31,10 +31,10 @@ public class BiasAnalyser implements Serializable{
 	}
 
 	public void runAllTests(){
-//		this.calcCTRbyRank();
-//		this.calcClicksBySetandRank();		
-//		this.calcFirstClickbyRank();
-//		this.calcFirstClickbySetAndRank();
+		this.calcCTRbyRank();
+		this.calcClicksBySetandRank();		
+		this.calcFirstClickbyRank();
+		this.calcFirstClickbySetAndRank();
 		this.calcTimeStatsbyRank(10);
 	}
 

@@ -24,12 +24,12 @@ public class CSVLoader {
 	public CSVLoader(String filename){
 		parseCSV(openCSV(filename));
 	}
-	
+
 	public CSVLoader(String filename, String outputPath){
 		this.outputPath = outputPath;
 		parseCSV(openCSV(filename));
 	}
-	
+
 	private FileReader openCSV(String filename){
 		FileReader file = null;
 		try{
