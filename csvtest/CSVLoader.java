@@ -17,7 +17,7 @@ public class CSVLoader {
 	DateTimeFormatter dateformat = DateTimeFormatter.ofPattern("yyyy-M-d H:m:s", Locale.ENGLISH);
 	List<Entry> clickedEntries = new ArrayList<Entry>();
 	private final int MAXRANK = Main.MAXRANK;
-	private final int MAXCSVLINES = 1000000;
+	private final int MAXCSVLINES = 80000000;
 	String outputPath = ".\\";
 	int[] totalEntriesByRank = new int[MAXRANK];
 

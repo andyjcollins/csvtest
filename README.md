@@ -6,7 +6,7 @@ Basic program to test bias in etc etc
 
 From the command-line:
 
-java -jar [input csv file.csv] [optional output directory]
+java -jar [jarfile] [input csv file.csv] [optional output directory]
 
 CSV files will be written to the current directory by default
 
